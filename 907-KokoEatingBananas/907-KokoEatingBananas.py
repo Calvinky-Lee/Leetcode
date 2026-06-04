@@ -11,6 +11,7 @@ class Solution:
 
             for i in piles:
                 hours += math.ceil(i/mid)
+
             
             if hours <= h:
                 result = min(result, mid)
