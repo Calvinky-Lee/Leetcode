@@ -1,18 +1,10 @@
-# Last updated: 6/18/2026, 12:06:52 PM
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-class Solution(object):
-    def reverseList(self, head):
-        prev = None  # Initialize prev as None
-        curr = head  # Start with curr at the head of the list
-
-        while curr:
-            temp = curr.next  # Store the next node
-            curr.next = prev  # Reverse the pointer
-            prev = curr       # Move prev forward
-            curr = temp      # Move curr forward
-
-        return prev  # prev is the new head of the reversed list
+# Last updated: 6/22/2026, 6:05:15 PM
+1class Solution:
+2    def twoSum(self, nums: List[int], target: int) -> List[int]:
+3        numbers = {}
+4        for i,n in enumerate(nums):
+5
+6            if target - n in numbers:
+7                return [i , numbers[target-n] ]
+8            
+9            numbers[n] = i
