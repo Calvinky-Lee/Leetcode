@@ -1,40 +1,14 @@
-# Last updated: 7/13/2026, 1:38:29 PM
-1import copy
-2class Solution:
-3    def checkInclusion(self, s1: str, s2: str) -> bool:
-4        s1_dict = {}
-5        begin = 0
-6        end = len(s1)
-7        
-8        for i in s1:
-9            if i in s1_dict:
-10                s1_dict[i] += 1
-11            else:
-12                s1_dict[i] = 1
-13
-14        while end <= len(s2):
-15            counter = 0
-16            temp = copy.copy(s1_dict)
-17            for i in s2[begin:end]:
-18                if i in s1:
-19                    temp[i] -= 1
-20
-21            for key in temp:
-22                if temp[key] == 0:
-23                    counter += 1
-24
-25            if counter == len(s1_dict):
-26                return True
-27             
-28            begin += 1
-29            end += 1
-30        return False
-31
-32
-33
-34
-35
-36            
-37
-38
-39        
+# Last updated: 7/28/2026, 4:57:28 PM
+1# Definition for a binary tree node.
+2# class TreeNode:
+3#     def __init__(self, val=0, left=None, right=None):
+4#         self.val = val
+5#         self.left = left
+6#         self.right = right
+7class Solution:
+8    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+9        if p is None or q is None:
+10            return (p is None) and (q is None)
+11        else:
+12            return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+13        
