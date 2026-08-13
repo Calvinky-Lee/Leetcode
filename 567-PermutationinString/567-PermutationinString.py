@@ -1,4 +1,4 @@
-# Last updated: 8/9/2026, 8:35:16 PM
+# Last updated: 8/12/2026, 11:57:32 PM
 1import copy
 2class Solution:
 3    def checkInclusion(self, s1: str, s2: str) -> bool:
